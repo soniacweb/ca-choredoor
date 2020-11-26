@@ -6,6 +6,8 @@ const doorImage3 = document.getElementById('door3')
 
 const botDoorPath = 'https://content.codecademy.com/projects/chore-door/images/robot.svg'
 const beachDoorPath = 'https://content.codecademy.com/projects/chore-door/images/beach.svg'
+const spaceDoorPath = 'https://content.codecademy.com/projects/chore-door/images/space.svg' 
+
 
 doorImage1.onclick = () => {
   // alert('you clicked me!')
@@ -18,5 +20,6 @@ doorImage2.onclick = () => {
 
 doorImage3.onclick = () => {
   // alert('you clicked me!')
-  doorImage3.src = beachDoorPath
+  doorImage3.src = spaceDoorPath
 }
+
