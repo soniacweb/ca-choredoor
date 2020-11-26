@@ -8,36 +8,42 @@ const botDoorPath = 'https://content.codecademy.com/projects/chore-door/images/r
 const beachDoorPath = 'https://content.codecademy.com/projects/chore-door/images/beach.svg'
 const spaceDoorPath = 'https://content.codecademy.com/projects/chore-door/images/space.svg' 
 
-const numClosedDoors = 3;
-const openDoor1;
-const openDoor2;
-const openDoor3;
+const numClosedDoors = 3
+let openDoor1
+let openDoor2
+let openDoor3
 
+const choreDoor = Math.floor(Math.random() * numClosedDoors + 1)
 
 const randomChoreDoorGenerator = () => {
-let choreDoor = Math.floor(Math.random() * numClosedDoors + 1)
-if (choreDoor === 1) {
-  openDoor1 = botDoorPath
-} else if (choreDoor === 2) {
-  openDoor2 = botDoorPath
-} else (choreDoor === 3) {
-  openDoor3 = botDoorPath
+  if (choreDoor === 1) {
+    openDoor1 = botDoorPath
+    openDoor2 = beachDoorPath
+    openDoor3 = spaceDoorPath
+  } else if (choreDoor === 2) {
+    openDoor2 = botDoorPath
+    openDoor3 = beachDoorPath
+    openDoor1 = spaceDoorPath
+  } else if (choreDoor === 3) {
+    openDoor3 = botDoorPath
+    openDoor2 = spaceDoorPath
+    openDoor1 = beachDoorPath
+  }
 }
-
-}
-randomChoreDoorGenerator()
 
 doorImage1.onclick = () => {
   // alert('you clicked me!')
-  doorImage1.src = botDoorPath
+  doorImage1.src = openDoor1
 }
 doorImage2.onclick = () => {
   // alert('you clicked me!')
-  doorImage2.src = beachDoorPath
+  doorImage2.src = openDoor2
 }
 
 doorImage3.onclick = () => {
   // alert('you clicked me!')
-  doorImage3.src = spaceDoorPath
+  doorImage3.src = openDoor3
 }
 
+
+randomChoreDoorGenerator()
